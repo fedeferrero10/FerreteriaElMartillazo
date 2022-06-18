@@ -9,7 +9,10 @@
      
 	<link rel="shortcut icon" type="image/x-icon" href="imagenes/favicon.ico" />
      <link rel="stylesheet" href="css/style.css" />
+	 <link rel="stylesheet" href="css/bootstrap.css" />
+	 <link rel="stylesheet" href="js/bootstrap.js" />
      <link rel="stylesheet" href="font/stylesheet.css" />
+
      
      <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,500' rel='stylesheet' type='text/css'>
      <link href='https://fonts.googleapis.com/css?family=Arvo:400,400italic' rel='stylesheet' type='text/css'>
@@ -18,9 +21,28 @@
      
 </head>
 
+<?php
+session_start();
+
+
+if(isset($_SESSION['rol'])): {
+	//variable ya declarada y usada
+}
+else:
+	$_SESSION['rol'] = 0;
+endif;
+
+
+//if ($_SESSION['rol']==2){ 
+//	header("Location:index.php");
+//}
+
+?>
+
+
 <body>
 	<header>	
-		<div class= "content">
+		<div class= "contentHeader">
 		<img id="logo" src="imagenes/logo.png" title="El Martillazo" alt="El Martillazo">
 		<nav id="barrabusqueda">
 			<div class="flexsearch">
@@ -39,7 +61,12 @@
 				<a href="index.php#inicio"><li>INICIO</li></a>
 				<a href="#servicios"><li>PRODUCTOS</li></a>
 				<a href="contacto.php"><li>Contacto</li></a>
-				<a href="#"><li>INICIAR SESION</li></a>
+				<?php if ($_SESSION['rol']==0):?>
+					<a href="login.php"><li>INICIAR SESION</li></a>
+				<?php else: ?>
+
+					<a href="desconectar.php"><li>CERRAR SESION (<?php echo $_SESSION['user']?>)</li></a>
+				<?php endif ?>
 	
 			</ul>
 		</nav>

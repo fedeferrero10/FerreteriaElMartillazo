@@ -2,6 +2,10 @@
 	font-family: 'titilliumregular';
 }
 
+html {
+	min-height: 100%;
+	position: relative;
+  }
 
 body{
 	margin: 0;
@@ -14,6 +18,8 @@ body{
 		width: 100%;
 		max-width:1360px;
 		margin: 0 auto;
+		min-height: calc(89vh - 90px);
+		overflow: hidden;
 	}	
 
 
@@ -35,6 +41,12 @@ header{
 	background-color: #d9dae2;
 
 }
+.contentHeader{
+	width: 100%;
+	max-width:1360px;
+	margin: 0 auto;
+
+}	
 
 
 #logo{
@@ -304,7 +316,8 @@ article p{
 	
 	#contacto{
 		float: left;
-	}
+		}
+
 	
 	#contacto h1{
 		color: rgb(0 114 206);
@@ -340,12 +353,12 @@ article p{
 		padding-left: 10px;
 	}
 
-	#enviar{
+	.btn{
 		width: 150px;
 		background: #f93822;;
 		color: #fff;
 	}
-		#enviar:hover{
+		.btn:hover{
 			background: rgb(247, 217, 217);
 			color: rgb(0 114 206);;
 			
@@ -356,6 +369,68 @@ article p{
 			-webkit-transition: all 1s;
 		}
 
+/*LOGIN*/
+	
+#login{
+	float: left;
+	background-image: url("../imagenes/fondoLogin.jpg");
+	background-repeat: repeat-x;
+}
+
+#login h1{
+	color: rgb(0 114 206);
+	font-size: 40px;
+}
+
+#login p{
+	color: rgb(0, 0, 0);
+	font-size: 16px;
+}
+
+.Ingreso {
+	width: 50%;
+	float: left;
+}
+.Registro {
+	width: 50%;
+	float: right;
+}
+.form-group{
+	padding-left: 28%;
+}
+/*ADMIN*/
+	
+#admin{
+	float: left;
+}
+
+#admin h1{
+	color: rgb(0 114 206);
+	font-size: 40px;
+}
+
+#admin p{
+	color: rgb(0, 0, 0);
+	font-size: 16px;
+}
+
+
+.grilla{
+	width: 150px;
+	background: #6bd3e0;;
+	color: #fff;
+}
+	.grilla:hover{
+		background: rgb(247, 217, 217);
+		color: rgb(0 114 206);;
+		
+		transition: all 0.5s;
+		-o-transition: all 0.5s;
+		-ms-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+	}
+
 /*ESTILO FOOTER*/					
 	footer{
 		width: 100%;
@@ -363,7 +438,6 @@ article p{
 		background: #b8ecfc ;
 		position: relative;
 		float: left;
-		bottom:-37px;
 		left: 0;
 	}
 		
