@@ -43,7 +43,7 @@ endif;
 <body>
 	<header>	
 		<div class= "contentHeader">
-		<img id="logo" src="imagenes/logo.png" title="El Martillazo" alt="El Martillazo">
+		<a href="index.php"> <img id="logo" src="imagenes/logo.png" title="El Martillazo" alt="El Martillazo"> </a>
 		<nav id="barrabusqueda">
 			<div class="flexsearch">
 			<div class="flexsearch--wrapper">
@@ -58,13 +58,16 @@ endif;
 		</nav>
 		<nav id="menu">
 			<ul>
-				<a href="index.php#inicio"><li>INICIO</li></a>
-				<a href="#servicios"><li>PRODUCTOS</li></a>
+				<a href="index.php"><li>INICIO</li></a>
 				<a href="contacto.php"><li>Contacto</li></a>
 				<?php if ($_SESSION['rol']==0):?>
 					<a href="login.php"><li>INICIAR SESION</li></a>
 				<?php else: ?>
-
+					<?php if ($_SESSION['rol']==2):?>
+					<a href="productos.php"><li>PRODUCTOS</li></a>
+					<?php else: ?>
+					<a href="admin.php"><li>USUARIOS</li></a>
+					<?php endif ?>
 					<a href="desconectar.php"><li>CERRAR SESION (<?php echo $_SESSION['user']?>)</li></a>
 				<?php endif ?>
 	

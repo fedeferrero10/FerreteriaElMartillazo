@@ -2,9 +2,9 @@
 	<footer>
 		<nav id="social">
 			<ul>
-				<li><a href="facebook.com" target="_blank"><img src="imagenes/facebook.svg" alt="Facebook"></a></li>
-				<li><a href="twitter.com" target="_blank"><img src="imagenes/twitter.svg" alt="Twitter"></a></li>
-				<li><a href="google.com" target="_blank"><img src="imagenes/google+.svg" alt="Google+"></a></li>
+				<li><a href="index.php"><img src="imagenes/facebook.svg" alt="Facebook"></a></li>
+				<li><a href="index.php" ><img src="imagenes/twitter.svg" alt="Twitter"></a></li>
+				<li><a href="index.php" ><img src="imagenes/google+.svg" alt="Google+"></a></li>
 			</ul>
 		</nav>
 	</footer>

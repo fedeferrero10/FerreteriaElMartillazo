@@ -28,10 +28,10 @@ session_start();
 		if($pass==$aux['Password']){			//si la pasword que ingresamos es igual a cualquiera de la bd es un usuario nomal/descartando admin/
 			$_SESSION['id']=$aux['Id'];		// guarda el id de ese usuario
 			$_SESSION['user']=$aux['UserName'];	//guarda el nombre de ese usuario
-			$_SESSION['rol']=$aux['Rol'];		//guarda el valor de ese usuario 
+			$_SESSION['rol']=$aux['rol'];		//guarda el valor de ese usuario 
 
-			if($aux['Rol'] == 1) { //Rol 1 es Administrador 
-				echo '<script>alert("BIENVENIDO ADMINISTRADOR Rol('.$_SESSION['rol'].')")</script> ';
+			if($aux['rol'] == 1) { //Rol 1 es Administrador 
+				echo '<script>alert("BIENVENIDO ADMINISTRADOR ('.$_SESSION['rol'].')")</script> ';
 				echo "<script>location.href='admin.php'</script>";
 			}else {
 
@@ -41,13 +41,13 @@ session_start();
 		}else{
 			echo '<script>alert("CONTRASEÑA INCORRECTA")</script> ';
 		
-			echo "<script>location.href='index.php'</script>";
+			echo "<script>location.href='login.php'</script>";
 		}
 	}else{
 		
 		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';
 		
-		echo "<script>location.href='index.php'</script>";	
+		echo "<script>location.href='login.php'</script>";	
 
 	}
 

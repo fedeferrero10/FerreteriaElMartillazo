@@ -20,6 +20,7 @@ body{
 		margin: 0 auto;
 		min-height: calc(89vh - 90px);
 		overflow: hidden;
+		padding-left: 35px;
 	}	
 
 
@@ -298,11 +299,11 @@ article h2{
 }
 
 article p{
-	font-size: 12px;
+	font-size: 17px;
 	margin: 0px 20px;
 	text-align: justify;
 	
-	text-shadow: 1px 1px 10px rgba(0,0,0,1);
+	text-shadow: 1px 1px 10px rgb(249 56 34);
 }
 
 
@@ -368,7 +369,19 @@ article p{
 			-moz-transition: all 1s;
 			-webkit-transition: all 1s;
 		}
+.divMapa{
+	padding-left: 76px;
+    margin-left: 700px;
+    margin-top: -642px;
+    margin-bottom: 249px;
+	}
+	.respuestaMail{
+		margin-left: 438px;
+		margin-top: -73px;
+		color: #0072ce;
+  	  font-size: 20px;
 
+	}
 /*LOGIN*/
 	
 #login{
@@ -382,6 +395,7 @@ article p{
 	font-size: 40px;
 }
 
+
 #login p{
 	color: rgb(0, 0, 0);
 	font-size: 16px;
@@ -390,10 +404,16 @@ article p{
 .Ingreso {
 	width: 50%;
 	float: left;
+	padding-top: 53px;
+}
+.CamposIngreso{
+	padding-top: 17px;
+    padding-bottom: 17px;
 }
 .Registro {
 	width: 50%;
 	float: right;
+	padding-top: 53px;
 }
 .form-group{
 	padding-left: 28%;
@@ -414,6 +434,36 @@ article p{
 	font-size: 16px;
 }
 
+.accionesGrilla{
+	width: 23px;
+	height: 23px;
+}
+.btnAgregarUsuarios{
+	margin-left: 436px;
+}
+.divAgregarUsuarios{
+	padding-bottom: 20px;
+	margin-left: 190px;
+}
+.fotoPerfilGrilla{
+	width: 40px;
+    height: 40px;
+    margin-left: 22px;
+}
+.fotoPerfil{
+    width: 200px;
+    height: 200px;
+    border: solid;
+    border-width: 6px;
+    border-color: #b8ecfc;
+}
+.divFotoPerfil{
+    margin-left: 373px;
+    margin-top: 68px;
+}
+.parrafoFotoPerfil{
+	margin-left: 76px;
+}
 
 .grilla{
 	width: 150px;
@@ -430,7 +480,30 @@ article p{
 		-moz-transition: all 0.5s;
 		-webkit-transition: all 0.5s;
 	}
-
+/*PRODUCTOS*/
+.btnProductos{
+    margin-left: 347px;
+    margin-top: -107px;
+}
+.divBtnProductos{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.filtrosProductos{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+}
+.formProductos{
+	width: 38%;
+	height: 135px;
+}
+.comboOrder{
+	border: 1px solid black;
+    margin-left: 14px;
+    margin-top: -10px;
+    width: 195px;
+}
 /*ESTILO FOOTER*/					
 	footer{
 		width: 100%;

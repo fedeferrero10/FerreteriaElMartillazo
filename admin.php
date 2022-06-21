@@ -22,6 +22,9 @@ if (@!$_SESSION['user']) {
                     <div class="well well-small">
                         <!-- <hr class="soft"/> -->
                         <h4>Usuarios</h4>
+                        <div class="divAgregarUsuarios">
+						<a href='agregarUsuarios.php'> <input type="submit" value="Agregar" class="btn btnAgregarUsuarios"></a>
+                        </div>
                         <div class="row-fluid">
 
                             <?php
@@ -36,8 +39,8 @@ if (@!$_SESSION['user']) {
 				$sentencia=mysqli_query($mysqli,$sql);
 				$arreglo=mysqli_fetch_row($sentencia);
 				$totalArtDB = $arreglo[0];
-				$articulos_x_pagina = 3;
-				$paginas = $totalArtDB/3; 
+				$articulos_x_pagina = 5;
+				$paginas = $totalArtDB/$articulos_x_pagina; 
 				$paginas = ceil($paginas);
 			
 
@@ -50,31 +53,36 @@ if (@!$_SESSION['user']) {
 
 				echo "<table border='1'; class='table table-hover';>";
 					echo "<tr class='warning'>";
-						echo "<td>Legajo</td>";
+					echo "<td></td>";
+					echo "<td></td>";
+						echo "<td>Id</td>";
 						echo "<td>Nombre de usuario</td>";
 						echo "<td>Contraseña</td>";
 						echo "<td>Correo electrónico</td>";
+						echo "<td>Rol</td>";
+						echo "<td>Foto de Perfil</td>";
 						//echo "<td>Contraseña del administrador</td>"; //contraseña del adinistrador que no sea visible
-						echo "<td>Editar</td>";
-						echo "<td>Borrar</td>";
+					
 					echo "</tr>";
 
 			    
 			?>
-
-             <?php 
+ 
+                            <?php 
 
 				 while($arreglo=mysqli_fetch_array($query)){
 				  	echo "<tr class='grilla'>";
+					  echo "<td><a href='actualizar.php?id=$arreglo[0]'><img src='imagenes/editar.png' class='accionesGrilla'></td>";
+						echo "<td><a href='admin.php?id=$arreglo[0]&idborrar=2'><img src='imagenes/eliminar.png' class='accionesGrilla'/></a></td>";
 				    	echo "<td>$arreglo[0]</td>";
 				    	echo "<td>$arreglo[1]</td>";
-				    	echo "<td>$arreglo[2]</td>";
+				    	echo "<td>*******</td>";
 				    	echo "<td>$arreglo[3]</td>";
+						echo "<td>$arreglo[4]</td>";
+						echo "<td><img class='fotoPerfilGrilla' src='data:image/jpeg;base64,".base64_encode($arreglo[5])."'/></td>";
+                   
 				    	//echo "<td>$arreglo[4]</td>"; //Contraseña del administrador que no sea visible
 
-				    	echo "<td><a href='actualizar.php?id=$arreglo[0]'><img src='images/actualizar.gif' class='img-rounded'></td>";
-						echo "<td><a href='admin.php?id=$arreglo[0]&idborrar=2'><img src='images/eliminar.png' class='img-rounded'/></a></td>";
-						
 
 						
 					echo "</tr>";
@@ -94,11 +102,11 @@ if (@!$_SESSION['user']) {
 
 					?>
 
-	
 
 
 
-		<?php 
+
+                            <?php 
 	//----------------aca empieza Paginacion------------- 
 
 
@@ -107,33 +115,32 @@ if (@!$_SESSION['user']) {
 		
 
 			?>
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item
 	<?php echo $_GET['pagina']<=1 ? 'disabled' : '' ?>
 	"><a class="page-link" tabindex="-1" href="admin.php?pagina=<?php echo $_GET['pagina']-1 ?>">
-	  Anterior
-	</a>
-    </li>
+                                            Anterior
+                                        </a>
+                                    </li>
 
-	<?php for($i=0;$i<$paginas;$i++): ?>
-    <li class="page-item 
+                                    <?php for($i=0;$i<$paginas;$i++): ?>
+                                    <li class="page-item 
 		<?php echo $_GET['pagina']==$i+1 ? 'active' : '' ?>">
-		<a class="page-link"  href="admin.php?pagina=<?php echo $i+1 ?>">
-		<?php echo $i+1 ?>
-		</a>
-    </li>
-	<?php endfor ?>
+                                        <a class="page-link" href="admin.php?pagina=<?php echo $i+1 ?>">
+                                            <?php echo $i+1 ?>
+                                        </a>
+                                    </li>
+                                    <?php endfor ?>
 
 
-    <li class="page-item
+                                    <li class="page-item
 	<?php echo $_GET['pagina']>=$paginas ? 'disabled' : '' ?>
-	"><a class="page-link" 
-	   href="admin.php?pagina=<?php echo $_GET['pagina']+1 ?>">
-		  Next</a>
-    </li>
-  </ul>
-</nav>
+	"><a class="page-link" href="admin.php?pagina=<?php echo $_GET['pagina']+1 ?>">
+                                            Next</a>
+                                    </li>
+                                </ul>
+                            </nav>
 
 
                         </div>

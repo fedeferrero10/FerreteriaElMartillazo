@@ -5,32 +5,29 @@
     <div id="slider">
         <img src="imagenes/slide1_ferreteria.png">
         <img src="imagenes/slide2.png">
-
     </div>
 </section>
 <div class="content">
     <section id="servicios">
-
-
-
         <article>
             <h2>Herramientas</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+            <p>Nuestros productos están enfocados a profesionales y particulares, por lo que contamos con un amplio catálogo.
+			Tenemos herramientas manuales, herramientas eléctricas, podrás encontrar sierras circulares, cortadoras, pulidoras, lijadoras,
+			 taladros y mucho más. 
             </p>
         </article>
 
         <article>
             <h2>Plomería</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-            </p>
+            <p>La más amplia variedad de artículos de plomeria, de acero, epoxi y termofusión. Lo ayudamos a que pueda elegir la mejor calidad y precio acuerdo a sus necesidades.
+			</p>
+			<br>
+          
         </article>
 
         <article>
             <h2>Eléctricos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.
-                Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
+            <p>Un negocio profesionalizado en el rubro eléctrico con actitud de servicio y asesoramento que satisfaga las necesidades de los clientes y les brinde soluciones inteligentes.
             </p>
         </article>
 
@@ -41,7 +38,7 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-    setInterval(animar, 6000);
+    setInterval(animar, 4000);
 });
 
 function animar() {
