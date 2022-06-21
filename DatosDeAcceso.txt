@@ -1,0 +1,7 @@
+Administrador
+user: fedeferrero10@gmail.com
+pass: 1234
+
+Usuario común
+user: mb@g.com
+pass:123
